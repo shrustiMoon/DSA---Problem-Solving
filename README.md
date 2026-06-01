@@ -1,2 +1,41 @@
-# DSA---Problem-Solving
-  Structured solutions to LeetCode problems across Arrays, Trees, Graphs, DP, and more — written in C++ language. Focused on clean code, optimal time/space complexity, and pattern recognition for technical interviews.
+# DSA - Problem Solving 🧠
+
+A structured collection of my LeetCode solutions, organized by topic and 
+difficulty level. This repository reflects my consistent practice in 
+Data Structures and Algorithms as part of my preparation for 
+Software Development Engineer (SDE) interviews.
+
+## 📌 What's Inside
+
+- ✅ Clean, well-commented solutions in C++.
+- ✅ Problems categorized by topic (Arrays, Trees, Graphs, DP, etc.)
+- ✅ Time & Space complexity noted for every solution
+- ✅ Multiple approaches where applicable (Brute Force → Optimized)
+
+## 🗂️ Topics Covered
+
+| Topic |
+|-------|
+| Arrays & Strings |
+| Linked Lists | 
+| Binary Search | 
+| Stacks & Queues | 
+| Trees & BST | 
+| Graphs & BFS/DFS | 
+| Dynamic Programming | |
+| Recursion & Backtracking | 
+| Sliding Window | 
+| Two Pointers | 
+
+## 🎯 Goal
+
+> Solve 300+ LeetCode problems and master every core DSA pattern 
+> required for top-tier tech company interviews.
+
+
+## 🙋‍♀️ About Me
+
+I'm Shruti, a passionate developer actively preparing for SDE roles. 
+I believe consistency beats intensity — so here I am, one problem at a time.
+
+⭐ Star this repo if you find it helpful!
