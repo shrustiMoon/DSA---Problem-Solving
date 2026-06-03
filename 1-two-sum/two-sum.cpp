@@ -5,12 +5,12 @@ public:
         for(int i=0; i<nums.size(); i++){
             int a = nums[i];
             int req = target - a;
-
+            
             if(mpp.find(req)!=mpp.end()){
-                return {mpp[req],i};
+                return{mpp[req],i};
             }
             mpp[a] = i;
         }
-        return{};
+        return {};
     }
 };
