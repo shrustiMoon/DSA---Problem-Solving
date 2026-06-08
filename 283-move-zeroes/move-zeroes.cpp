@@ -2,25 +2,19 @@ class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
         int n = nums.size();
-        int j = -1;
-
-        // Find 1st occurence of 0
+        vector<int>temp;
+        
+        // Add non-zeros elements to temp
         for(int i=0; i<n; i++){
-            if(nums[i]==0){
-                j = i;
-                break;
-            }
+            if(nums[i]!=0) temp.push_back(nums[i]);
         }
-
-        // When no 0s exists
-        if(j==-1) return;
-
-        // Find non-zero element & swap them with 0s
-        for(int i=j+1; i<n; i++){
-            if(nums[i]!=0){
-                swap(nums[i],nums[j]);
-                j++;
-            }
+        // Add elements back into nums
+        for(int i=0; i<temp.size(); i++){
+            nums[i] = temp[i];
+        }
+        // Add the 0s to remaining places
+        for(int i=temp.size(); i<n; i++){
+            nums[i] = 0;
         }
     }
 };
