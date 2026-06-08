@@ -1,25 +1,18 @@
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
-        // Using 2 Pointer Approach
         int n = nums.size();
-        int j = -1;
+        vector<int>temp;
 
-        // To find the 1st 0 present
         for(int i=0; i<n; i++){
-            if(nums[i]==0){
-                j = i;
-                break;
-            }
+            if(nums[i]!=0)
+               temp.push_back(nums[i]);
         }
-
-        if(j==-1) return;
-        // To find the non-zero element & swap
-        for(int i=j+1; i<n; i++){
-            if(nums[i]!=0){
-                swap(nums[i],nums[j]);
-                j++;
-            }
+        for(int i=0; i<temp.size();i++){
+            nums[i] = temp[i];
+        }
+        for(int i=temp.size(); i<n; i++){
+            nums[i] = 0;
         }
     }
 };
