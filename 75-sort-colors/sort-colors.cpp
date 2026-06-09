@@ -1,7 +1,6 @@
 class Solution {
 public:
     void sortColors(vector<int>& nums) {
-        // Using Dutch National Flag Algorithm
         int n = nums.size();
         int low = 0;
         int mid = 0;
@@ -9,7 +8,7 @@ public:
 
         while(mid<=high){
             if(nums[mid]==0){
-                swap(nums[mid],nums[low]);
+                swap(nums[low],nums[mid]);
                 low++;
                 mid++;
             }
