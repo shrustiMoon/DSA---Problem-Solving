@@ -9,6 +9,5 @@ public:
             if(drop>1) return false;  
         }
         return true;
-
     }
 };
