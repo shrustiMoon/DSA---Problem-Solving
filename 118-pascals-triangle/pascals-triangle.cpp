@@ -1,12 +1,12 @@
 class Solution {
-public: 
-    vector<int>generateRows(int rows){
+public:
+    vector<int>generateRow(int row){
         int ans = 1;
         vector<int>ansRow;
         ansRow.push_back(1);
 
-        for(int col=1; col<rows; col++){
-            ans = ans * (rows-col);
+        for(int col=1; col<row; col++){
+            ans = ans * (row-col);
             ans = ans / col;
             ansRow.push_back(ans);
         }
@@ -15,7 +15,7 @@ public:
     vector<vector<int>> generate(int numRows) {
         vector<vector<int>>ans;
         for(int i=1; i<=numRows; i++){
-            ans.push_back(generateRows(i));
+            ans.push_back(generateRow(i));
         }
         return ans;
     }
