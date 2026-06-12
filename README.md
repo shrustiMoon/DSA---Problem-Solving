@@ -32,10 +32,3 @@ Software Development Engineer (SDE) interviews.
 > Solve 300+ LeetCode problems and master every core DSA pattern 
 > required for top-tier tech company interviews.
 
-
-## 🙋‍♀️ About Me
-
-I'm Shruti, a passionate developer actively preparing for SDE roles. 
-I believe consistency beats intensity — so here I am, one problem at a time.
-
-⭐ Star this repo if you find it helpful!
