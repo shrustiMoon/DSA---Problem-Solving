@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Function - First Occurence
     int firstOccurence(vector<int>& nums, int n, int target){
         int low = 0;
         int high = n-1;
@@ -10,6 +11,7 @@ public:
 
             if(nums[mid]==target){
                 first = mid;
+                // Move to right half
                 high = mid-1;
             }
             else if(nums[mid]<target){
@@ -32,6 +34,7 @@ public:
 
             if(nums[mid]==target){
                 last = mid;
+                // Move to left half
                 low = mid+1;
             }
             else if(nums[mid]<target){
@@ -43,6 +46,8 @@ public:
         }
         return last;
     }
+
+    // Function - Last Occurence
     vector<int> searchRange(vector<int>& nums, int target) {
         int n = nums.size();
         int first = firstOccurence(nums,n,target);
