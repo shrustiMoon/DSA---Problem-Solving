@@ -11,26 +11,25 @@ public:
 
             if(nums[mid]==target) return true;
 
-            // For duplicate elements
             if(nums[low]==nums[mid] && nums[mid]==nums[high]){
                 low++;
-                high--;
+                mid--;
                 continue;
             }
-            // If left side is sorted
+
+            // If Left half is sorted
             if(nums[low]<=nums[mid]){
                 if(target>=nums[low] && target<=nums[mid])
-                  high = mid-1;
+                   high = mid-1;
                 else
-                   low = mid+1;  
+                   low = mid+1;   
             }
-
-            // If right side is sorted
+            // If Right half is sorted
             else{
                 if(target>=nums[mid] && target<=nums[high])
                    low = mid+1;
                 else
-                    high = mid-1;   
+                   high = mid-1;   
             }
         }
         return false;
