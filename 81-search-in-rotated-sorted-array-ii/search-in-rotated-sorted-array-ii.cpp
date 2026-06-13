@@ -11,6 +11,7 @@ public:
 
             if(nums[mid]==target) return true;
 
+            // If all pointers point to same number
             if(nums[low]==nums[mid] && nums[mid]==nums[high]){
                 low++;
                 mid--;
