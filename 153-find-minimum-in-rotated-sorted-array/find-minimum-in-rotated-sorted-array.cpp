@@ -14,6 +14,7 @@ public:
                ans = min(ans, nums[low]);
                low = mid+1;
             }
+            // If Right half is SORTED
             else{
                ans = min(ans,nums[mid]);
                high = mid-1;
