@@ -1,17 +1,17 @@
 class Solution {
 public:
-    // Function to find maximum element in array
-    int Find_Max(vector<int>& piles){
+    // Function to find Maximum Value in array
+    int Max_Value(vector<int>& piles){
         int maxi = INT_MIN;
         int n = piles.size();
         for(int i=0; i<n; i++){
-            maxi = max(maxi, piles[i]);
+            maxi = max(maxi,piles[i]);
         }
         return maxi;
     }
 
-    // Function to Calculate the TotalHrs
-    long long CalculateTotalHrs(vector<int>& piles, int hourly){
+    // Function to Calculate TotalHrs
+    long long TotalHrs(vector<int>& piles, int hourly){
         long long Total = 0;
         int n = piles.size();
         for(int i=0; i<n; i++){
@@ -21,18 +21,18 @@ public:
     }
 
     int minEatingSpeed(vector<int>& piles, int h) {
-        // low and high is range of the answer
+        int n = piles.size();
         int low = 1;
-        int high = Find_Max(piles);
+        int high = Max_Value(piles);
         int ans = INT_MAX;
 
         while(low<=high){
             int mid = (low+high)/2;
-            long long TotalHrs = CalculateTotalHrs(piles,mid);
+            long long total_hrs = TotalHrs(piles,mid);
 
-            if(TotalHrs<=h){
+            if(total_hrs<=h){
                 ans = mid;
-                high = mid-1;   // Eliminate Right half to find minimum
+                high = mid-1;   // Eliminate the right to find minimum
             }
             else{
                 low = mid+1;
