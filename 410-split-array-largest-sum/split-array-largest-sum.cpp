@@ -1,17 +1,17 @@
 class Solution {
 public:
-    bool PossibleSum(vector<int>& nums, int barrier, int k){
+    bool SubarrayPossible(int barrier,vector<int>& nums,int k){
         int n = nums.size();
         int split = 1;
-        int sum = 0;
+        int subarraySum = 0;
         for(int i=0; i<n; i++){
             if(nums[i]>barrier) return false;
-            if(sum+nums[i]>barrier){
+            if(subarraySum+nums[i]>barrier){
                 split += 1;
-                sum = nums[i];
+                subarraySum = nums[i];
             }
             else{
-                sum += nums[i];
+                subarraySum += nums[i];
             }
         }
         if(split>k) return false;
@@ -22,21 +22,22 @@ public:
 
         int low = INT_MIN;
         int high = 0;
-        int res = -1;
+        int ans = -1;
+        // To find search space
         for(auto it : nums){
-            low = max(low,it);   // minimum element
-            high += it;         // sum of elements
+            low = max(low,it);
+            high += it;
         }
         while(low<=high){
             int mid = (low+high)/2;
-            if(PossibleSum(nums,mid,k)==true){
-                res = mid;
+            if(SubarrayPossible(mid,nums,k)==true){
+                ans = mid;
                 high = mid-1;
             }
             else{
                 low = mid+1;
             }
         }
-        return res;
+        return ans;
     }
 };
