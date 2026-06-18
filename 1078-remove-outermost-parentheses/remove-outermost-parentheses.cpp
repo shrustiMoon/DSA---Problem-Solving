@@ -6,14 +6,14 @@ public:
 
         for(char ch : s){
             if(ch == '('){
-                if(cnt > 0) result += ch;
+                if(cnt>0) result += ch;
                 cnt++;
             }
-            else {
-                if(ch == ')'){
-                    cnt--;
-                    if(cnt > 0) result += ch;
-                }
+            else{
+               if(ch == ')'){
+                cnt--;
+                if(cnt>0) result += ch;
+               }
             }
         }
         return result;
