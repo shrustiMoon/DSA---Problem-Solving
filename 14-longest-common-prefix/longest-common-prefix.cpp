@@ -3,21 +3,19 @@ public:
     string longestCommonPrefix(vector<string>& strs) {
         string ans = "";
 
-        // If the array is empty
-        if(strs.empty()) return "";
-
-        // Sort the array
+        // Sort the array strs
         sort(strs.begin(), strs.end());
 
-        string first = strs[0];             // first in sorted array
-        string last = strs[strs.size()-1];  // last in sorted array
-        // Find the minimum length
-        int minLength = min(first.size(), last.size());
+        string first = strs[0];
+        string last = strs[strs.size()-1];
 
-        for(int i=0; i<minLength; i++){
+        // Find the minimum length
+        int MinLength = min(first.size(), last.size());
+
+        for(int i=0; i<MinLength; i++){
             if(first[i]!=last[i]) break;
             ans += first[i];
         }
         return ans;
-    }
+;    }
 };
