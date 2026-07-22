@@ -1,11 +1,11 @@
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
-        // To point 'j' pointer to first 0 element
-        int j=-1;
+        // To point 'j' to first 0 element
+        int j = -1;
         for(int i=0; i<nums.size(); i++){
             if(nums[i]==0){
-                j=i;
+                j = i;
                 break;
             }
         }
@@ -13,7 +13,7 @@ public:
         // To find the non-zero element & swap
         for(int i=j+1; i<nums.size(); i++){
             if(nums[i]!=0){
-                swap(nums[i],nums[j]);
+                swap(nums[i], nums[j]);
                 j++;
             }
         }
