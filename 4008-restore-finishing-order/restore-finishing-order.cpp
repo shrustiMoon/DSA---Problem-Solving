@@ -1,11 +1,14 @@
 class Solution {
 public:
     vector<int> recoverOrder(vector<int>& order, vector<int>& friends) {
-        unordered_set<int>st(friends.begin(), friends.end());
+        unordered_map<int,int>mpp;
         vector<int>ans;
-        for(auto it : order){
-            if(st.count(it)){
-                ans.push_back(it);
+        for(auto it : friends){
+            mpp[it]++;
+        }
+        for(auto t : order){
+            if(mpp[t]!=0){
+                ans.push_back(t);
             }
         }
         return ans;
