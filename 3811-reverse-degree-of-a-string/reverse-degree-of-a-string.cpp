@@ -2,10 +2,11 @@ class Solution {
 public:
     int reverseDegree(string s) {
         int sum = 0;
+        int reverse_index = 0;
         for(int i=0; i<s.size(); i++){
-            int reverse_value = 26 - (s[i]-'a');
-            sum += reverse_value * (i+1);
+            reverse_index = 26 - (s[i]-'a');
+            sum = sum + (reverse_index * (i+1));
         }
-        return sum ;
+        return sum;
     }
 };
