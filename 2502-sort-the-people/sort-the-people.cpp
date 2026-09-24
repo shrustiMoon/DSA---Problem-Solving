@@ -10,7 +10,8 @@ public:
         }
         // Sort in Descending order
         sort(people.rbegin(), people.rend());
-
+        
+        // Store the names in ans array
         for(auto it : people){
             ans.push_back(it.second);
         }
