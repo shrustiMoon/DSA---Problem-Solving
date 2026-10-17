@@ -1,32 +1,24 @@
 class Solution {
 public:
     bool checkValidString(string s) {
-        int low = 0;
-        int high = 0;
-
-        for (char c : s) {
-
-            if (c == '(') {
-                low++;
-                high++;
+        int min = 0;
+        int max = 0;
+        for(int i=0; i<s.size(); i++){
+            if(s[i]=='('){
+                min = min + 1;
+                max = max + 1;
             }
-            else if (c == ')') {
-                low--;
-                high--;
+            else if(s[i]==')'){
+                min = min - 1;
+                max = max - 1;
             }
-            else { // '*'
-                low--;      // '*' acts as ')'
-                high++;     // '*' acts as '('
+            else{
+                min = min - 1;
+                max = max + 1;
             }
-
-            // Even the maximum possibility has too many ')'
-            if (high < 0)
-                return false;
-
-            // Minimum cannot be negative
-            low = max(0, low);
+            if(min < 0) min = 0;
+            if(max < 0) return false;
         }
-
-        return low == 0;
+        return (min == 0);
     }
 };
